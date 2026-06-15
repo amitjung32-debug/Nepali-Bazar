@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nepali Bazar Vendor Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Nepali Bazar</a>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Shop</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#manage">Inventory</a>
+        <a href="#chat">Chat</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <div class="header-actions">
+        <span id="user-status" class="nav-user"></span>
+        <button id="logout-btn" class="button button-secondary logout-button hidden">Logout</button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="dashboard" class="dashboard-section container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Business portal</span>
+          <h1>Manage products and chat with customers</h1>
+        </div>
+      </div>
+      <div class="dashboard-grid">
+        <div class="dashboard-card">
+          <span>Total products</span>
+          <strong id="product-count">0</strong>
+        </div>
+        <div class="dashboard-card">
+          <span>Active chat messages</span>
+          <strong id="message-count">0</strong>
+        </div>
+        <div class="dashboard-card">
+          <span>Cart value</span>
+          <strong id="orders-count">Live</strong>
+        </div>
+        <div class="dashboard-card">
+          <span>Revenue loss</span>
+          <strong id="loss-count">0</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="manage" class="manage-section container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Inventory management</span>
+          <h2>Update your storefront</h2>
+        </div>
+      </div>
+      <form id="product-form" class="product-form">
+        <div class="form-row">
+          <input id="product-name" placeholder="Product name" required />
+          <input id="product-price" type="number" min="1" step="0.01" placeholder="Price" required />
+        </div>
+        <div class="form-row">
+          <input id="product-category" placeholder="Category (e.g. kapada, aahar, sajawati)" required />
+          <input id="product-image" placeholder="Image URL or label" required />
+        </div>
+        <textarea id="product-description" rows="3" placeholder="Short description" required></textarea>
+        <div class="form-row">
+          <label class="checkbox-label">
+            <input id="product-loss" type="checkbox" /> Mark as revenue-loss sale
+          </label>
+        </div>
+        <button type="submit" class="button full-width">Add Product</button>
+      </form>
+
+      <div class="product-table-wrap">
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Loss</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="business-product-list"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="chat" class="chat-section container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Direct communication</span>
+          <h2>Business chat center</h2>
+        </div>
+      </div>
+      <div class="chat-panel">
+        <div class="chat-header">
+          <div>
+            <strong>Send message as</strong>
+            <select id="business-chat-role" aria-label="Select business chat role">
+              <option value="business">Business</option>
+              <option value="customer">Customer</option>
+            </select>
+          </div>
+          <button id="business-reset-chat" class="button button-sm">Reset conversation</button>
+        </div>
+        <div class="chat-box" id="business-chat-box"></div>
+        <form id="business-chat-form" class="chat-form">
+          <input id="business-chat-input" type="text" placeholder="Type a message..." aria-label="Type a message" required />
+          <button type="submit" class="button">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Nepali Bazar Vendor Dashboard.</p>
+      <div class="footer-links">
+        <a href="index.html">Shop</a>
+        <a href="#manage">Inventory</a>
+        <a href="#chat">Chat</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

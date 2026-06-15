@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nepali Bazar Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Nepali Bazar</a>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="business.html">Vendor</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <div class="header-actions">
+        <span id="user-status" class="nav-user"></span>
+        <button id="logout-btn" class="button button-secondary logout-button hidden">Logout</button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="auth-page container">
+      <div class="auth-card">
+        <h1>Login or register for Nepali Bazar</h1>
+        <p>Select your role and sign in, or create a new customer account.</p>
+        <div class="auth-switch">
+          <button type="button" id="auth-toggle-login" class="auth-switch-btn active">Login</button>
+          <button type="button" id="auth-toggle-register" class="auth-switch-btn">Register</button>
+        </div>
+        <div id="login-card">
+          <form id="login-form" class="auth-form">
+            <div class="form-field">
+              <label for="login-role">Role</label>
+              <select id="login-role" required>
+                <option value="customer">Customer</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="login-username">Username</label>
+              <input id="login-username" type="text" placeholder="customer or admin" required />
+            </div>
+            <div class="form-field">
+              <label for="login-password">Password</label>
+              <input id="login-password" type="password" placeholder="password" required />
+            </div>
+            <p class="auth-help">Customer: <strong>customer / password</strong> · Admin: <strong>admin / admin123</strong></p>
+            <button type="submit" class="button full-width">Login</button>
+            <p id="login-message" class="auth-message"></p>
+          </form>
+        </div>
+        <div id="register-card" class="hidden">
+          <form id="register-form" class="auth-form">
+            <div class="form-field">
+              <label for="register-username">Username</label>
+              <input id="register-username" type="text" placeholder="Choose a username" required />
+            </div>
+            <div class="form-field">
+              <label for="register-password">Password</label>
+              <input id="register-password" type="password" placeholder="Choose a password" required />
+            </div>
+            <div class="form-field">
+              <label for="register-password-confirm">Confirm password</label>
+              <input id="register-password-confirm" type="password" placeholder="Confirm password" required />
+            </div>
+            <p class="auth-help">Register as a new customer to shop local Nepali products.</p>
+            <button type="submit" class="button full-width">Register</button>
+            <p id="register-message" class="auth-message"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Nepali Bazar. Login for customer and admin access.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

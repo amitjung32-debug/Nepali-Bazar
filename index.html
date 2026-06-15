@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nepali Bazar | Local NPR Marketplace</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Nepali Bazar</a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#products">Products</a>
+        <a href="#features">Why Nepali?</a>
+        <a href="#chat">Chat</a>
+        <a href="business.html">Vendor</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <div class="header-actions">
+        <span id="user-status" class="nav-user"></span>
+        <button id="logout-btn" class="button button-secondary logout-button hidden">Logout</button>
+        <button class="cart-button" id="open-cart">
+          Cart <span class="cart-count" id="cart-count">0</span>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero"> 
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">Local Nepali goods</span>
+          <h1>Buy Nepali products in NPR with direct seller chat.</h1>
+          <p>Support local artisans and farmers with a modern responsive marketplace for Nepal.</p>
+          <div class="hero-actions">
+            <a href="#products" class="button">Shop local</a>
+            <a href="#chat" class="button button-secondary">Message sellers</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <span>Fast order flow</span>
+              <span class="badge">Vendor support</span>
+            </div>
+            <div class="hero-card-body">
+              <p>Choose from handmade goods, food, and clothing while chatting with vendors in real time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="overview container">
+      <div class="overview-card">
+        <h2>Handmade products</h2>
+        <p>Discover authentic Nepali crafts, clothing, and local food made across Nepal.</p>
+      </div>
+      <div class="overview-card">
+        <h2>Vendor ready</h2>
+        <p>Vendors can manage local products, pricing, and customer conversations easily.</p>
+      </div>
+      <div class="overview-card">
+        <h2>NPR pricing</h2>
+        <p>All prices display in Nepalese rupees so buyers know exactly what they pay.</p>
+      </div>
+    </section>
+
+    <section id="products" class="products-section container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Featured collection</span>
+          <h2>Products you will love</h2>
+        </div>
+        <div class="product-filter">
+          <input id="search-input" type="search" placeholder="Search products" aria-label="Search products" />
+          <div class="filter-buttons">
+            <button data-category="all" class="filter-button active">All</button>
+            <button data-category="kapada" class="filter-button">Kapada</button>
+            <button data-category="aahar" class="filter-button">Aahar</button>
+            <button data-category="sajawati" class="filter-button">Sajawati</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section id="features" class="features-section container">
+      <div class="feature-item">
+        <h3>Fast checkout</h3>
+        <p>Cart, totals, and checkout actions are built for smooth customer experience.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Inventory controls</h3>
+        <p>Business owners can add products and update their storefront in real time.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Live support</h3>
+        <p>Use the customer-business chat panel for questions, order updates, and support.</p>
+      </div>
+    </section>
+
+    <section id="chat" class="chat-section container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Customer support</span>
+          <h2>Customer to business chat</h2>
+        </div>
+      </div>
+      <div class="chat-panel">
+        <div class="chat-header">
+          <div>
+            <strong>Chat role</strong>
+            <select id="chat-role" aria-label="Select chat role">
+              <option value="customer">Customer</option>
+              <option value="business">Business</option>
+            </select>
+          </div>
+          <button id="reset-chat" class="button button-sm">Reset conversation</button>
+        </div>
+        <div class="chat-box" id="chat-box"></div>
+        <form id="chat-form" class="chat-form">
+          <input id="chat-input" type="text" placeholder="Type a message..." aria-label="Type a message" required />
+          <button type="submit" class="button">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Nepali Bazar. Supporting local Nepalese products.</p>
+      <div class="footer-links">
+        <a href="#products">Products</a>
+        <a href="business.html">Vendor</a>
+        <a href="#chat">Chat</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-panel" id="cart-panel" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Your cart</h3>
+      <button id="close-cart" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <span>Total</span>
+      <strong>$<span id="cart-total">0.00</span></strong>
+    </div>
+    <button id="checkout-btn" class="button full-width">Checkout</button>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
